@@ -1,0 +1,10 @@
+# ZAP baseline rule config: <pluginId>	<WARN|IGNORE|FAIL>	<comment>
+# Tab-separated. Baseline defaults every passive alert to WARN; here we raise
+# the header alerts to FAIL so a regression that drops a header on /secure
+# breaks the build, while keeping demo-only noise as WARN.
+10038	FAIL	Content Security Policy (CSP) header not set
+10020	FAIL	Anti-clickjacking header missing
+10021	FAIL	X-Content-Type-Options header missing
+10035	WARN	Strict-Transport-Security header (only meaningful over HTTPS in CI)
+10036	WARN	Server leaks version info via Server header (werkzeug/gunicorn)
+10096	IGNORE	Timestamp disclosure - not relevant to this static demo

@@ -1,0 +1,19 @@
+# Secrets and local config
+.env
+
+# ZAP scan output
+zap-report.html
+zap-report.md
+zap-report.json
+*.har
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+.pytest_cache/
+
+# IDE
+.idea/
+.vscode/
